@@ -1,0 +1,4 @@
+%_topdir /work/rpmbuild
+
+%packager Gary Benson <gary@gbenson.net>
+%vendor Gary Benson
