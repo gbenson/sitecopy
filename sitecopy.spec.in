@@ -9,7 +9,11 @@ Group: Applications/Internet
 Source0: http://www.lyra.org/sitecopy/sitecopy-%{version}.tar.gz
 URL: http://www.lyra.org/sitecopy/
 BuildRoot: /var/tmp/sitecopy-%{version}-root
+BuildRequires: make
+BuildRequires: gcc
 BuildRequires: expat-devel
+BuildRequires: neon-devel
+BuildRequires: gettext
 
 %description
 sitecopy allows you to easily maintain remote Web sites.  The program
@@ -41,10 +45,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/sitecopy
 %{_mandir}/man1/*
 %{_mandir}/*/man1/*
-%{_datadir}/sitecopy
+%doc %{_datadir}/sitecopy
 %doc COPYING ChangeLog INSTALL NEWS README* THANKS TODO
 
 %changelog
+* Wed Apr 19 2023 Gary Benson <gary@gbenson.net>
+- Update BuildRequires
+- Mark %{_datadir}/sitecopy as %doc
+
 * Sat Aug 13 2005 Joe Orton <joe@manyfish.co.uk>
 - remove xsitecopy subpackage
 - use find_lang
